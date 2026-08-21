@@ -44,7 +44,7 @@ def test_update_user():
     }
 
     response = client.put(
-        "f"{BASE_URL}/users/1",
+        f"{BASE_URL}/users/1",
         json=payload
     )
 
