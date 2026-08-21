@@ -82,3 +82,11 @@ def test_update_user():
     assert user["name"] == "Naga Silpa Updated"
     assert user["email"] == "silpa.updated@example.com"
     assert user["username"] == "silpa_updated"
+def test_get_invalid_user():
+    client = APIClient()
+
+    response = client.get(
+        f"{BASE_URL}/users/9999"
+    )
+
+    assert response.status_code == 404
