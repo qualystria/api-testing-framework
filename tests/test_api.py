@@ -57,7 +57,7 @@ def test_delete_user():
     client = APIClient()
 
     response = client.delete(
-        "f"{BASE_URL}/users/1"
+        f"{BASE_URL}/users/1"
     )
 
     assert response.status_code == 200
