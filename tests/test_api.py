@@ -55,3 +55,11 @@ def test_update_user():
 
     assert user["name"] == "Naga Silpa Updated"
     assert user["email"] == "silpa.updated@example.com"
+def test_delete_user():
+    client = APIClient()
+
+    response = client.delete(
+        "https://jsonplaceholder.typicode.com/users/1"
+    )
+
+    assert response.status_code == 200
