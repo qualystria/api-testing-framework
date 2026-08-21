@@ -2,7 +2,7 @@ from utils.api_client import APIClient
 from config.config import BASE_URL
 def test_get_users():
     client = APIClient()
-response = client.get(
+    response = client.get(
     f"{BASE_URL}/users"
 )
     )
