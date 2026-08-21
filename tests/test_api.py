@@ -42,11 +42,10 @@ def test_update_user():
         "email": "silpa.updated@example.com",
         "username": "silpa_updated"
     }
-
-    response = client.put(
-        f"{BASE_URL}/users/1",
-        json=payload
-    )
+response = client.put(
+    f"{BASE_URL}/users/1",
+    json=payload
+)
 
     assert response.status_code == 200
 
