@@ -90,3 +90,11 @@ def test_get_invalid_user():
     )
 
     assert response.status_code == 404
+def test_get_invalid_endpoint():
+    client = APIClient()
+
+    response = client.get(
+        f"{BASE_URL}/invalid-endpoint"
+    )
+
+    assert response.status_code == 404
