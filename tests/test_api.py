@@ -5,7 +5,6 @@ def test_get_users():
     response = client.get(
     f"{BASE_URL}/users"
 )
-    )
 
     assert response.status_code == 200
 
