@@ -23,7 +23,7 @@ def test_create_user():
     }
 
     response = client.post(
-        "https://jsonplaceholder.typicode.com/users",
+        f"{BASE_URL}/users"
         json=payload
     )
 
