@@ -98,3 +98,24 @@ def test_get_invalid_endpoint():
     )
 
     assert response.status_code == 404
+def test_create_user_response_fields():
+    client = APIClient()
+
+    payload = {
+        "name": "Test User",
+        "email": "test@example.com",
+        "username": "testuser"
+    }
+
+    response = client.post(
+        f"{BASE_URL}/users",
+        json=payload
+    )
+
+    assert response.status_code == 201
+
+    user = response.json()
+
+    assert "id" in user
+    assert user["name"] == "Test User"
+    assert user["email"] == "test@example.com"
