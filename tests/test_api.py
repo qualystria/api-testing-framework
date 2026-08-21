@@ -24,7 +24,7 @@ def test_create_user():
     }
 
     response = client.post(
-        f"{BASE_URL}/users"
+        f"{BASE_URL}/users",
         json=payload
     )
 
