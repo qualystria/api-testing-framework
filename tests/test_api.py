@@ -35,3 +35,23 @@ def test_create_user():
 
     assert user["name"] == "Naga Silpa"
     assert user["email"] == "silpa@example.com"
+def test_update_user():
+    client = APIClient()
+
+    payload = {
+        "name": "Naga Silpa Updated",
+        "email": "silpa.updated@example.com",
+        "username": "silpa_updated"
+    }
+
+    response = client.put(
+        "https://jsonplaceholder.typicode.com/users/1",
+        json=payload
+    )
+
+    assert response.status_code == 200
+
+    user = response.json()
+
+    assert user["name"] == "Naga Silpa Updated"
+    assert user["email"] == "silpa.updated@example.com"
