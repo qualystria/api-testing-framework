@@ -1,10 +1,11 @@
-import requests
+from utils.api_client import APIClient
 
 
 def test_get_users():
-    response = requests.get(
-        "https://jsonplaceholder.typicode.com/users",
-        timeout=10
+    client = APIClient()
+
+    response = client.get(
+        "https://jsonplaceholder.typicode.com/users"
     )
 
     assert response.status_code == 200
