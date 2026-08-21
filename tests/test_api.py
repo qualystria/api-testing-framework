@@ -43,7 +43,7 @@ def test_update_user():
     }
 
     response = client.put(
-        "https://jsonplaceholder.typicode.com/users/1",
+        "f"{BASE_URL}/users/1",
         json=payload
     )
 
@@ -57,7 +57,7 @@ def test_delete_user():
     client = APIClient()
 
     response = client.delete(
-        "https://jsonplaceholder.typicode.com/users/1"
+        "f"{BASE_URL}/users/1"
     )
 
     assert response.status_code == 200
