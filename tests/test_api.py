@@ -61,3 +61,24 @@ def test_delete_user():
     )
 
     assert response.status_code == 200
+def test_update_user():
+    client = APIClient()
+
+    payload = {
+        "name": "Naga Silpa Updated",
+        "email": "silpa.updated@example.com",
+        "username": "silpa_updated"
+    }
+
+    response = client.put(
+        f"{BASE_URL}/users/1",
+        json=payload
+    )
+
+    assert response.status_code == 200
+
+    user = response.json()
+
+    assert user["name"] == "Naga Silpa Updated"
+    assert user["email"] == "silpa.updated@example.com"
+    assert user["username"] == "silpa_updated"
